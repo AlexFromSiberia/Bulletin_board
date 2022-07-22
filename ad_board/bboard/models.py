@@ -8,3 +8,4 @@ class Bb(models.Model):
     published = models.DateTimeField(auto_now_add=True, db_index=True)
 
 
+
