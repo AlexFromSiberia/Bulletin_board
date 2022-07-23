@@ -1,0 +1,22 @@
+{% extends 'bboard/base.html' %}
+
+{%block title%} Add an ad  {%endblock title%}
+
+{%block pagename%}  <h1>Add an ad</h1> {%endblock pagename%}
+
+{%block content%}
+    <div>
+        <form action="" method="post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <input type='submit' value="Submit">
+        </form>
+    </div>
+{%endblock content%}
+
+        <h4>Categories:</h4>
+        {%for category in categories%}
+            <ul>
+                <li><a href="{% url 'by_category' category.pk %}">{{category.name}}</a></li>
+            </ul>
+        {%endfor%}

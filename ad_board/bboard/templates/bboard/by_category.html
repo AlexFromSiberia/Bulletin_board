@@ -1,0 +1,21 @@
+{% extends 'bboard/base.html' %}
+
+{%block title%}Ads by category {%endblock title%}
+
+{%block pagename%}  <h1>Ads by category </h1> {%endblock pagename%}
+
+{%block content%}
+    <div>
+        {%for bb in bbs%}
+            <div>
+                <h2>{{bb.title}}</h2>
+                <h4>Description:</h4>
+                <p>{{bb.content}}</p>
+                <h4>Price:</h4>
+                <p>{{bb.price}}</p>
+                <p>{{bb.published}}</p>
+                <hr>
+            </div>
+        {%endfor%}
+    </div>
+{%endblock content%}

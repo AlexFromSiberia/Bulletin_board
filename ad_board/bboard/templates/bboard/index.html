@@ -1,0 +1,17 @@
+{% extends 'bboard/base.html' %}
+
+{%block title%} HomePage {%endblock title%}
+
+{%block pagename%}  <h1>HomePage</h1> {%endblock pagename%}
+
+{%block content%}
+    {%for bb in bbs%}
+        <div>
+            <h2>{{bb.title}}</h2>
+            <p>{{bb.content}}</p>
+            <p><a href="{% url 'by_category' bb.category.pk %}">{{bb.category.name}}</a></p>
+            <p>{{bb.published}}</p>
+        </div>
+    {%endfor%}
+{%endblock content%}
+
