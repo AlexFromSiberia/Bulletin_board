@@ -2,7 +2,7 @@
 
 {%block title%} HomePage {%endblock title%}
 
-{%block pagename%}  <h1>HomePage</h1> {%endblock pagename%}
+{%block pagename%}  <h1>Home Page</h1> {%endblock pagename%}
 
 {%block content%}
     {%for bb in bbs%}
@@ -11,6 +11,7 @@
             <p>{{bb.content}}</p>
             <p><a href="{% url 'by_category' bb.category.pk %}">{{bb.category.name}}</a></p>
             <p>{{bb.published}}</p>
+            <hr>
         </div>
     {%endfor%}
 {%endblock content%}
