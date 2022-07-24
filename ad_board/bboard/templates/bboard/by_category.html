@@ -6,16 +6,22 @@
 
 {%block content%}
     <div>
-        {%for bb in bbs%}
-            <div>
-                <h2>{{bb.title}}</h2>
-                <h4>Description:</h4>
-                <p>{{bb.content}}</p>
-                <h4>Price:</h4>
-                <p>{{bb.price}}</p>
-                <p>{{bb.published}}</p>
-                <hr>
-            </div>
-        {%endfor%}
+        <h2>All the ads we have in "{{current_category}}" category:</h2>
+        {%if bbs%}
+            {%for bb in bbs%}
+                <div>
+                    <h2>{{bb.title}}</h2>
+                    <h4>Description:</h4>
+                    <p>{{bb.content}}</p>
+                    <h4>Price:</h4>
+                    <p>{{bb.price}}</p>
+                    <p>{{bb.published}}</p>
+                    <hr>
+                </div>
+            {%endfor%}
+        {%else%}
+        <br>
+            <h4 style="color: red">No adds in this category yet...</h4>
+        {%endif %}
     </div>
 {%endblock content%}
