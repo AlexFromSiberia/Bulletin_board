@@ -8,8 +8,11 @@
     <div>
         <form action="" method="post">
             {%csrf_token%}
-            {{form.as_p}}
-            <input type='submit' value="Submit">
+            <table>
+                    {{form.as_table}}
+            </table>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Submit and send">
         </form>
     </div>
 {%endblock content%}

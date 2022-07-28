@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from .models import Bb, Category
+from .forms import BbForm
+
 
 
 def index(request):
@@ -25,8 +27,7 @@ def by_category(request, category_id):
 class BbCreateView(CreateView):
     template_name = 'bboard/create.html'
     success_url = reverse_lazy('create')
-    model = Bb
-    fields = "__all__"
+    form_class = BbForm
 
 
 

@@ -9,14 +9,12 @@ class BbForm(ModelForm):
         labels = {'title': 'Enter the title ',
                   'content': 'Enter full description',
                   'price': 'How much for it?',
-                  'published': 'Date',
-                  'category': 'Enter category'}
+                  'category': 'Choose the category',
+                  }
 
         widgets = {
-            "title": TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the title'}),
-            'price': TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the title'}),
-            'category': TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the title'}),
-            "published": DateTimeField(),
-            "content": Textarea(attrs={'class': 'form-control', 'placeholder': 'Full text'}),
+            'title': TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter the title'}),
+            'price': TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your price in US dollars'}),
+            'content': Textarea(attrs={'class': 'form-control', 'placeholder': 'Full text'}),
         }
 
