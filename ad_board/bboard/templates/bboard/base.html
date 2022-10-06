@@ -37,7 +37,7 @@
                 <h4>Categories:</h4>
                     <ul>
                         {%for category in categories%}
-                        <li><a href="{% url 'by_category' category.pk %}">{{category.name}}</a></li>
+                            <li><a href="{% url 'by_category' category.pk %}">{{category.name}}</a></li>
                         {%endfor%}
                     </ul>
             {% endif %}

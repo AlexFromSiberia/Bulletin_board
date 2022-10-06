@@ -5,7 +5,6 @@ from .models import Bb, Category
 from .forms import BbForm
 
 
-
 def index(request):
     bbs = Bb.objects.all()
     categories = Category.objects.all()
