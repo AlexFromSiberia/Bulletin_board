@@ -3,6 +3,7 @@ from .models import Bb
 
 
 class BbForm(ModelForm):
+    """Bulletin board form"""
     class Meta:
         model = Bb
         fields = "__all__"
@@ -17,4 +18,3 @@ class BbForm(ModelForm):
             'price': TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your price in US dollars'}),
             'content': Textarea(attrs={'class': 'form-control', 'placeholder': 'Full text'}),
         }
-

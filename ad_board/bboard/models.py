@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
+    """Category model"""
     name = models.CharField(max_length=30, db_index=True, verbose_name='Category')
 
     class Meta:
@@ -12,6 +13,7 @@ class Category(models.Model):
 
 
 class Bb(models.Model):
+    """Bulletin Board model"""
     title = models.CharField(max_length=50, verbose_name='Title')
     content = models.TextField(null=True, blank=True, verbose_name='Description')
     price = models.FloatField(null=True, blank=True, verbose_name='Price')
@@ -24,6 +26,3 @@ class Bb(models.Model):
 
     def __str__(self):
         return self.title
-
-
-

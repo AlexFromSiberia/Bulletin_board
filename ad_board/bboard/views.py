@@ -6,6 +6,7 @@ from .forms import BbForm
 
 
 def index(request):
+    """Main page"""
     bbs = Bb.objects.all()
     categories = Category.objects.all()
     context = {'bbs': bbs, 'categories': categories}
@@ -13,6 +14,7 @@ def index(request):
 
 
 def by_category(request, category_id):
+    """Show adds by category"""
     bbs = Bb.objects.filter(category=category_id)
     categories = Category.objects.all()
     current_category = Category.objects.get(pk=category_id)
@@ -24,6 +26,7 @@ def by_category(request, category_id):
 
 
 class BbCreateView(CreateView):
+    """Create a new add"""
     template_name = 'bboard/create.html'
     success_url = reverse_lazy('create')
     form_class = BbForm
